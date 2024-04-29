@@ -1,0 +1,41 @@
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.exe.config
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.exe
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.pdb
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.dll
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.pdb
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.xml
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.AssemblyReference.cache
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.SuggestedBindingRedirects.cache
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.Properties.Resources.resources
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.GenerateResource.cache
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.CoreCompileInputs.cache
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.CopyComplete
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.exe
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.pdb
+C:\Users\eduar\OneDrive\Documents\Engenharia da computação\2ºSemestre\Algoritmos II\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.Form1.resources
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.exe.config
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.exe
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\Lançamento_Obliquo_Gráfico.pdb
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.dll
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.pdb
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.xml
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.AssemblyReference.cache
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.Form1.resources
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.Properties.Resources.resources
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.GenerateResource.cache
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.CoreCompileInputs.cache
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.csproj.CopyComplete
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.exe
+C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lançamento_Obliquo_Gráfico\obj\Debug\Lançamento_Obliquo_Gráfico.pdb
