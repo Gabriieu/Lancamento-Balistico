@@ -19,138 +19,151 @@ namespace Lançamento_Obliquo_Gráfico
 {
     public partial class Form1 : Form
     {
-        static double v0x(double vo, double teta)
+
+        Formulas formulas = new Formulas();
+        double[] coordenadasx = new double[24];
+        double[] coordenadasy = new double[24];
+        double intervalo, v0, v0Y, v0X, angulo, g, alvoY, alvoX, tempo = 0;
+
+
+        Dictionary<string, decimal> gravidades = new Dictionary<string, decimal>()
         {
-            return vo * Math.Cos(teta);
-        }
-        static double v0y(double vo, double teta)
-        {
-            return vo * Math.Sin(teta);
-        }
-        static double tempoSubida(double Voy, double g)
-        {
-            return (Voy / g);
-        }
-        static double tempoDescida(double Hmax, double g)
-        {
-            return Math.Sqrt((2 * Hmax) / g);
-        }
-        static double hMax(double Voy, double g, double yo)
-        {
-            return Math.Pow(Voy, 2) / (2 * g) + yo;
-        }
-        static double alcance(double vo, double teta, double g)
-        {
-            return (Math.Pow(vo, 2)) * Math.Sin(2 * teta) / g;
-        }
+            {"Terra", 9.807m},
+            {"Lua", 1.622m},
+            {"Sol", 274.13m},
+            {"Mercúrio", 3.7m},
+            {"Vênus", 8.87m},
+            {"Marte", 3.711m},
+            {"Júpiter", 24.79m},
+            {"Saturno", 10.44m},
+            {"Urano", 8.69m},
+            {"Netuno", 11.15m},
+        };
+
+
+
         public Form1()
         {
             InitializeComponent();
+            //comboBox1.Text = "Terra";
+            //numericG.Value = gravidades["Terra"];
+        }
+
+        public string ascendenteDescendente(double v0Y, double g, double tempo)
+        {
+            double valor = v0Y - g * tempo;
+
+            if (valor > 0)
+                return "ascendente";
+
+            return "descendente";
+        }
+
+        public void calcular()
+        {
+            try
+            {
+                v0 = (double)numericV0.Value;
+                angulo = (double)numericTeta.Value;
+                v0Y = formulas.v0Y((double)numericV0.Value, angulo);
+                v0X = formulas.v0X((double)numericV0.Value, angulo);
+                g = (double)numericG.Value;
+                alvoX = (double)numericAlvoD.Value;
+                alvoY = (double)numericAlvoH.Value;
+                double tempoAtingirAlvo = formulas.tempoTotal(alvoX, v0X);
+                double distancia = formulas.alcanceHorizontal((double)numericV0.Value, (double)numericG.Value, (double)numericTeta.Value);
+                double tempoDeVoo = formulas.tempoDeSubida(v0Y, g) * 2;
+                double alturaMaxima = formulas.hMax(v0Y, g);
+
+                labelAtingido.Text = ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
+                labelDistanciaVoo.Text = distancia.ToString("F2") + " m";
+                labelTempoVoo.Text = tempoDeVoo.ToString("F2") + " s";
+                labelAlturaMaxima.Text = alturaMaxima.ToString("F2") + " m";
+                intervalo = 1;
+
+                if (numericV0.Value > 0 && numericG.Value > 0 && numericV0.Value > 0)
+                {
+                    for (int i = 0; i < coordenadasx.Length; i++)
+                    {
+                        coordenadasx[i] = formulas.v0X((double)numericV0.Value, (double)numericTeta.Value) * tempo;
+                        tempo += intervalo;
+                    }
+
+                    tempo = 0;
+
+                    for (int i = 0; i < coordenadasy.Length; i++)
+                    {
+                        coordenadasy[i] = (formulas.v0Y((double)numericV0.Value, (double)numericTeta.Value) * tempo) - (double)numericG.Value * Math.Pow(tempo, 2) / 2;
+                        tempo += intervalo;
+                    }
+
+                    new LineSeries
+                    {
+                        Values = new ChartValues<ObservablePoint>
+                            {
+                                new ObservablePoint(coordenadasx[0], coordenadasy[0]),
+                                new ObservablePoint(coordenadasx[1], coordenadasy[1]),
+                                new ObservablePoint(coordenadasx[2], coordenadasy[2]),
+                                new ObservablePoint(coordenadasx[3], coordenadasy[3]),
+                                new ObservablePoint(coordenadasx[4], coordenadasy[4]),
+                                new ObservablePoint(coordenadasx[5], coordenadasy[5]),
+                                new ObservablePoint(coordenadasx[6], coordenadasy[6]),
+                                new ObservablePoint(coordenadasx[7], coordenadasy[7]),
+                                new ObservablePoint(coordenadasx[8], coordenadasy[8]),
+                                new ObservablePoint(coordenadasx[9], coordenadasy[9]),
+                                new ObservablePoint(coordenadasx[10], coordenadasy[10]),
+                                new ObservablePoint(coordenadasx[11], coordenadasy[11]),
+                                new ObservablePoint(coordenadasx[12], coordenadasy[12]),
+                                new ObservablePoint(coordenadasx[13], coordenadasy[13]),
+                                new ObservablePoint(coordenadasx[14], coordenadasy[14]),
+                                new ObservablePoint(coordenadasx[15], coordenadasy[15]),
+                                new ObservablePoint(coordenadasx[16], coordenadasy[16]),
+                                new ObservablePoint(coordenadasx[17], coordenadasy[17]),
+                                new ObservablePoint(coordenadasx[18], coordenadasy[18]),
+                                new ObservablePoint(coordenadasx[19], coordenadasy[19]),
+                                new ObservablePoint(coordenadasx[20], coordenadasy[20]),
+                                new ObservablePoint(coordenadasx[21], coordenadasy[21]),
+                                new ObservablePoint(coordenadasx[22], coordenadasy[22]),
+                                new ObservablePoint(coordenadasx[23], coordenadasy[23]),
+                            }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
 
-        private void btnCalcular_Click(object sender, EventArgs e)
+        private void numericAlvoH_ValueChanged(object sender, EventArgs e)
         {
-            Formulas formulas = new Formulas();
-            double[] coordenadasx = new double[12];
-            double[] coordenadasy = new double[12];
-            double intervalo, v0, teta, g, h, alvoH, alvoD;
-            double tempo = 0;
+            numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            calcular();
+        }
+        private void numericAlvoD_ValueChanged(object sender, EventArgs e)
+        {
+            numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            calcular();
+        }
+        private void numericTeta_ValueChanged(object sender, EventArgs e)
+        {
+            numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            calcular();
+        }
+        private void numericG_ValueChanged(object sender, EventArgs e)
+        {
+            numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoH.Value, (double)numericAlvoD.Value);
+            calcular();
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string planeta = comboBox1.Text;
 
-            v0 = (double) numericV0.Value;
-            teta = (double) numericTeta.Value * (Math.PI / 180);
-            g = (double) numericG.Value;
-            h = (double) numericH.Value;
-            alvoH = (double) numericAlvoH.Value;
-            alvoD = (double) numericAlvoD.Value;
-            
-            label10.Text = formulas.anguloMinimo(alvoH, alvoD).ToString();
-            double novoAngulo = double.Parse(label10.Text);
-            label11.Text = formulas.v0Minima(g, novoAngulo, alvoH, alvoD).ToString();
-
-            double alcance = Form1.alcance(v0, teta, g) + ((tempoDescida(hMax(v0y(v0, teta), g, h), g) - Form1.tempoSubida(v0y(v0, teta), g)) * v0x(v0, teta));
-            lblAlcance.Text = Convert.ToString(Math.Round(alcance, 2)) + "m";
-            lblAlcance.Visible = true;
-
-            double tempoSubida = Form1.tempoSubida(v0y(v0, teta), g) + tempoDescida(hMax(v0y(v0, teta), g, h), g);
-            lblTt.Text = Convert.ToString(Math.Round(tempoSubida, 2)) + "s";   
-            lblTt.Visible = true;
-
-            lblHmax.Text = Convert.ToString(Math.Round((hMax(v0y(v0, teta), g, h)), 2)) + "m"; 
-            lblHmax.Visible = true;
-
-            if (h == 0)
-            {
-                intervalo = (Form1.tempoSubida(v0y(v0, teta), g) + tempoDescida(hMax(v0y(v0, teta), g, h), g)) / 10;
-            }
-            else
-            {
-                intervalo = (Form1.tempoSubida(v0y(v0, teta), g) + tempoDescida(hMax(v0y(v0, teta), g, h), g)) / 11;
-            }
-
-            for(int i = 0; i < coordenadasx.Length; i++)
-            {
-                coordenadasx[i] = v0x(v0, teta) * tempo;
-                tempo = tempo + intervalo;
-            }
-
-            tempo = 0;
-
-            for (int i = 0; i < coordenadasy.Length; i++)  //Ponto a melhorar na versão 2
-            {
-                coordenadasy[i] = h + (v0y(v0, teta) * tempo) - g * Math.Pow(tempo, 2) / 2;
-                tempo += intervalo;
-
-            }
-            if (h == 0)
-            {
-               
-                cartesianChart2.Series = new SeriesCollection
-                {
-                    new LineSeries
-                    {
-                        Values = new ChartValues<ObservablePoint>
-                        {
-                            new ObservablePoint(coordenadasx[0], coordenadasy[0]),
-                            new ObservablePoint(coordenadasx[1], coordenadasy[1]),
-                            new ObservablePoint(coordenadasx[2], coordenadasy[2]),
-                            new ObservablePoint(coordenadasx[3], coordenadasy[3]),
-                            new ObservablePoint(coordenadasx[4], coordenadasy[4]),
-                            new ObservablePoint(coordenadasx[5], coordenadasy[5]),
-                            new ObservablePoint(coordenadasx[6], coordenadasy[6]),
-                            new ObservablePoint(coordenadasx[7], coordenadasy[7]),
-                            new ObservablePoint(coordenadasx[8], coordenadasy[8]),
-                            new ObservablePoint(coordenadasx[9], coordenadasy[9]),
-                            new ObservablePoint(coordenadasx[10], coordenadasy[10]),
-                        }
-                    }
-                };
-            }
-            else
-            {
-                cartesianChart2.Series = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Values = new ChartValues<ObservablePoint>
-                    {
-                        new ObservablePoint(coordenadasx[0], coordenadasy[0]),
-                        new ObservablePoint(coordenadasx[1], coordenadasy[1]),
-                        new ObservablePoint(coordenadasx[2], coordenadasy[2]),
-                        new ObservablePoint(coordenadasx[3], coordenadasy[3]),
-                        new ObservablePoint(coordenadasx[4], coordenadasy[4]),
-                        new ObservablePoint(coordenadasx[5], coordenadasy[5]),
-                        new ObservablePoint(coordenadasx[6], coordenadasy[6]),
-                        new ObservablePoint(coordenadasx[7], coordenadasy[7]),
-                        new ObservablePoint(coordenadasx[8], coordenadasy[8]),
-                        new ObservablePoint(coordenadasx[9], coordenadasy[9]),
-                        new ObservablePoint(coordenadasx[10], coordenadasy[10]),
-                        new ObservablePoint(coordenadasx[11], coordenadasy[11]),
-                    }
-                }
-            };
-            }
+            //numericG.Value = gravidades[planeta];
         }
     }
 }

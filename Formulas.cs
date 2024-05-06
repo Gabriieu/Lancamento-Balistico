@@ -10,23 +10,95 @@ namespace Lançamento_Obliquo_Gráfico
     internal class Formulas
     {
 
-        public double anguloMinimo(double h, double d)
+        public double v0X(double v0, double teta)
         {
-            return Math.Atan(h / d) * (180 / Math.PI);
+            return v0 * Math.Cos(teta * Math.PI / 180);
         }
 
-        //fix
-        public double v0Minima(double g, double angulo, double y, double x)
+        public double v0Y(double v0, double teta)
         {
-            double rad = anguloMinimo(y, x);
+            return v0 * Math.Sin(teta * Math.PI / 180);
+        }
 
-            double cima = g * Math.Pow(x, 2) * (1 + Math.Pow(rad, 2));
+        public double deslocamentoX(double x0, double vx, double tempo)
+        {
+            return x0 + vx * tempo;
+        }
 
-            double baixo = 2 * (y - x * Math.Tan(angulo));
+        public double deslocamentoY(double y0, double v0y, double tempo, double gravidade)
+        {
+            return y0 + v0y * tempo - (gravidade / 2) * Math.Pow(tempo, 2);
+        }
 
-            //MessageBox.Show(Math.Tan(30).ToString());
+        public double vY(double v0Y, double gravidade, double tempo)
+        {
+            return v0Y - gravidade * tempo;
+        }
 
-            return Math.Sqrt(cima / baixo);
+        public double torricelliVY(double v0Y, double gravidade, double y)
+        {
+            return Math.Sqrt(Math.Pow(v0Y, 2) - 2 * gravidade * y);
+        }
+
+        public double tempoDeSubida(double v0Y, double gravidade)
+        {
+            return v0Y / gravidade;
+        }
+
+        public double tempoDeDescida(double v0Y, double gravidade)
+        {
+            return v0Y / gravidade;
+        }
+
+        public double tempoTotal(double x, double v0X)
+        {
+            return x / v0X;
+        }
+
+        public double hMax(double v0Y, double gravidade)
+        {
+            return Math.Pow(v0Y, 2) / (2 * gravidade);
+        }
+
+        public double alcanceHorizontal(double v0, double gravidade, double teta)
+        {
+            return (Math.Pow(v0, 2) / gravidade) * Math.Sin(teta * Math.PI / 180 * 2);
+        }
+
+        public double trajetoria(double x, double g, double angulo, double v0)
+        {
+            double dividendo = g * (1 + Math.Pow(Math.Tan(angulo * Math.PI / 180), 2));
+            double divisor = 2 * Math.Pow(v0, 2);
+
+            double resultado = x * Math.Tan(angulo * Math.PI / 180) - (dividendo / divisor) * Math.Pow(x, 2);
+
+            return resultado;
+        }
+
+        public double anguloMinimo(double y, double x)
+        {
+            if (y > 0)
+            {
+                return Math.Atan(y / x) * (180 / Math.PI) + 0.01;
+            }
+
+            return 0;
+        }
+
+        public double v0(double g, double angulo, double y, double x)
+        {
+
+            double tan = Math.Tan(angulo * Math.PI / 180);
+
+            double dividendo = g * Math.Pow(x, 2) * (1 + Math.Pow(tan, 2));
+
+            double divisor = 2 * (y - x * tan);
+
+            if (divisor < 0)
+                divisor *= -1;
+
+            double resultado = (dividendo / divisor);
+            return Math.Sqrt(resultado);
         }
     }
 }
