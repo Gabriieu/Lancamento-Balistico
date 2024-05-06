@@ -113,7 +113,7 @@ namespace Lançamento_Obliquo_Gráfico
             cartesianChart2.Series = new SeriesCollection
                     {
                         new LineSeries
-                    {
+                        {
                         Values = new ChartValues<ObservablePoint>
                             {
                                 new ObservablePoint(eixoX[0], eixoY[0]),
@@ -128,10 +128,20 @@ namespace Lançamento_Obliquo_Gráfico
                                 new ObservablePoint(eixoX[9], eixoY[9]),
                                 new ObservablePoint(distanciaMax, 0),
                             },
-                        StrokeThickness = 1,
-                        LineSmoothness = 1,
-                        DataLabels = true,
-                    }
+                            StrokeThickness = 1,
+                            LineSmoothness = 1,
+                            DataLabels = true,
+                        },
+                        new LineSeries
+                        {
+                            Values = new ChartValues<ObservablePoint>
+                            {
+                                new ObservablePoint(alvoX, alvoY)
+                            },
+                            StrokeThickness = 5,
+                            LineSmoothness= 5,
+                            Title = "ALVO",
+                        }
                     };
         }
         private void numericAlvoH_ValueChanged(object sender, EventArgs e)
