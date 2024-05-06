@@ -97,7 +97,9 @@ namespace Lançamento_Obliquo_Gráfico
                         tempo += intervalo;
                     }
 
-                    new LineSeries
+                    cartesianChart2.Series = new SeriesCollection
+                    {
+                        new LineSeries
                     {
                         Values = new ChartValues<ObservablePoint>
                             {
@@ -127,6 +129,7 @@ namespace Lançamento_Obliquo_Gráfico
                                 new ObservablePoint(coordenadasx[23], coordenadasy[23]),
                             }
                     }
+                    };
                 }
             }
             catch (Exception ex)
