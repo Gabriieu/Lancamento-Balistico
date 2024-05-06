@@ -21,8 +21,8 @@ namespace Lançamento_Obliquo_Gráfico
     {
 
         Formulas formulas = new Formulas();
-        double[] coordenadasx = new double[24];
-        double[] coordenadasy = new double[24];
+        List<double> coordenadasx = new List<double>();
+        List<double> coordenadasy = new List<double>();
         double intervalo, v0, v0Y, v0X, angulo, g, alvoY, alvoX, tempo = 0;
 
 
@@ -81,55 +81,23 @@ namespace Lançamento_Obliquo_Gráfico
                 labelAlturaMaxima.Text = alturaMaxima.ToString("F2") + " m";
                 intervalo = 1;
 
+
+
                 if (numericV0.Value > 0 && numericG.Value > 0 && numericV0.Value > 0)
                 {
-                    for (int i = 0; i < coordenadasx.Length; i++)
-                    {
-                        coordenadasx[i] = formulas.v0X((double)numericV0.Value, (double)numericTeta.Value) * tempo;
-                        tempo += intervalo;
-                    }
+                    coordenadasx.Clear();
+                    coordenadasy.Clear();
+                    double incremento = distancia * 0.1;
+                    double metroPercorrido = 0;
 
-                    tempo = 0;
-
-                    for (int i = 0; i < coordenadasy.Length; i++)
+                    do
                     {
-                        coordenadasy[i] = (formulas.v0Y((double)numericV0.Value, (double)numericTeta.Value) * tempo) - (double)numericG.Value * Math.Pow(tempo, 2) / 2;
-                        tempo += intervalo;
-                    }
-
-                    cartesianChart2.Series = new SeriesCollection
-                    {
-                        new LineSeries
-                    {
-                        Values = new ChartValues<ObservablePoint>
-                            {
-                                new ObservablePoint(coordenadasx[0], coordenadasy[0]),
-                                new ObservablePoint(coordenadasx[1], coordenadasy[1]),
-                                new ObservablePoint(coordenadasx[2], coordenadasy[2]),
-                                new ObservablePoint(coordenadasx[3], coordenadasy[3]),
-                                new ObservablePoint(coordenadasx[4], coordenadasy[4]),
-                                new ObservablePoint(coordenadasx[5], coordenadasy[5]),
-                                new ObservablePoint(coordenadasx[6], coordenadasy[6]),
-                                new ObservablePoint(coordenadasx[7], coordenadasy[7]),
-                                new ObservablePoint(coordenadasx[8], coordenadasy[8]),
-                                new ObservablePoint(coordenadasx[9], coordenadasy[9]),
-                                new ObservablePoint(coordenadasx[10], coordenadasy[10]),
-                                new ObservablePoint(coordenadasx[11], coordenadasy[11]),
-                                new ObservablePoint(coordenadasx[12], coordenadasy[12]),
-                                new ObservablePoint(coordenadasx[13], coordenadasy[13]),
-                                new ObservablePoint(coordenadasx[14], coordenadasy[14]),
-                                new ObservablePoint(coordenadasx[15], coordenadasy[15]),
-                                new ObservablePoint(coordenadasx[16], coordenadasy[16]),
-                                new ObservablePoint(coordenadasx[17], coordenadasy[17]),
-                                new ObservablePoint(coordenadasx[18], coordenadasy[18]),
-                                new ObservablePoint(coordenadasx[19], coordenadasy[19]),
-                                new ObservablePoint(coordenadasx[20], coordenadasy[20]),
-                                new ObservablePoint(coordenadasx[21], coordenadasy[21]),
-                                new ObservablePoint(coordenadasx[22], coordenadasy[22]),
-                                new ObservablePoint(coordenadasx[23], coordenadasy[23]),
-                            }
-                    }
-                    };
+                        double altura = formulas.trajetoria(metroPercorrido, g, angulo, v0);
+                        coordenadasy.Add(Math.Round(altura,2));
+                        coordenadasx.Add(Math.Round(metroPercorrido,2));
+                        metroPercorrido += incremento;
+                    } while (metroPercorrido < distancia);
+                    gerarGrafico(coordenadasx, coordenadasy, distancia);
                 }
             }
             catch (Exception ex)
@@ -140,6 +108,32 @@ namespace Lançamento_Obliquo_Gráfico
 
         }
 
+        public void gerarGrafico(List<double> eixoX, List<double> eixoY, double distanciaMax)
+        {
+            cartesianChart2.Series = new SeriesCollection
+                    {
+                        new LineSeries
+                    {
+                        Values = new ChartValues<ObservablePoint>
+                            {
+                                new ObservablePoint(eixoX[0], eixoY[0]),
+                                new ObservablePoint(eixoX[1], eixoY[1]),
+                                new ObservablePoint(eixoX[2], eixoY[2]),
+                                new ObservablePoint(eixoX[3], eixoY[3]),
+                                new ObservablePoint(eixoX[4], eixoY[4]),
+                                new ObservablePoint(eixoX[5], eixoY[5]),
+                                new ObservablePoint(eixoX[6], eixoY[6]),
+                                new ObservablePoint(eixoX[7], eixoY[7]),
+                                new ObservablePoint(eixoX[8], eixoY[8]),
+                                new ObservablePoint(eixoX[9], eixoY[9]),
+                                new ObservablePoint(distanciaMax, 0),
+                            },
+                        StrokeThickness = 1,
+                        LineSmoothness = 1,
+                        DataLabels = true,
+                    }
+                    };
+        }
         private void numericAlvoH_ValueChanged(object sender, EventArgs e)
         {
             numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);

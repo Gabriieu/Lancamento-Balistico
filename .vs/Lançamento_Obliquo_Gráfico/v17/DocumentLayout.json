@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\",
+  "WorkspaceRootPath": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|c:\\users\\eliel\\onedrive - funda\u00E7\u00E3o salvador arena\\lan\u00E7amento_obliquo_gr\u00E1fico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|c:\\users\\eliel\\desktop\\nova pasta (3)\\lancamento-balistico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\formulas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\formulas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E0342590-0659-44EF-BA0F-96CE4380AAF1}|Lan\u00E7amento_Obliquo_Gr\u00E1fico.csproj|solutionrelative:formulas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Form1.cs",
+              "ToolTip": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAowHsAAABQAAAA",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAIMAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T13:36:12.867Z",
               "IsPinned": true,
@@ -42,10 +42,10 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\eliel\\Desktop\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\Desktop\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-06T13:26:34.997Z"
             },
@@ -53,11 +53,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Formulas.cs",
-              "DocumentMoniker": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Formulas.cs",
+              "DocumentMoniker": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Formulas.cs",
               "RelativeDocumentMoniker": "Formulas.cs",
-              "ToolTip": "C:\\Users\\eliel\\OneDrive - Funda\u00E7\u00E3o Salvador Arena\\Lan\u00E7amento_Obliquo_Gr\u00E1fico\\Formulas.cs",
+              "ToolTip": "C:\\Users\\eliel\\Desktop\\Nova pasta (3)\\Lancamento-Balistico\\Formulas.cs",
               "RelativeToolTip": "Formulas.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAswBIAAAAJAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAIwEgAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T13:36:12.617Z"
             }

@@ -506,6 +506,7 @@
             this.Controls.Add(this.lbl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lançamento Obliquo";
             ((System.ComponentModel.ISupportInitialize)(this.numericV0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTeta)).EndInit();
