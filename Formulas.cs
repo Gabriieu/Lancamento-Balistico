@@ -100,5 +100,14 @@ namespace Lançamento_Obliquo_Gráfico
             double resultado = (dividendo / divisor);
             return Math.Sqrt(resultado);
         }
+        public string ascendenteDescendente(double v0Y, double g, double tempo)
+        {
+            double valor = v0Y - g * tempo;
+
+            if (valor > 0)
+                return "ascendente";
+
+            return "descendente";
+        }
     }
 }

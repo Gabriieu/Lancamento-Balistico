@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Diagnostics;
 using System.Windows.Forms;
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 
@@ -23,41 +24,21 @@ namespace Lançamento_Obliquo_Gráfico
         Formulas formulas = new Formulas();
         List<double> coordenadasx = new List<double>();
         List<double> coordenadasy = new List<double>();
-        double intervalo, v0, v0Y, v0X, angulo, g, alvoY, alvoX, tempo = 0;
+        double v0, v0Y, v0X, angulo, g, alvoY, alvoX;
 
 
-        Dictionary<string, decimal> gravidades = new Dictionary<string, decimal>()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            {"Terra", 9.807m},
-            {"Lua", 1.622m},
-            {"Sol", 274.13m},
-            {"Mercúrio", 3.7m},
-            {"Vênus", 8.87m},
-            {"Marte", 3.711m},
-            {"Júpiter", 24.79m},
-            {"Saturno", 10.44m},
-            {"Urano", 8.69m},
-            {"Netuno", 11.15m},
-        };
 
-
+        }
 
         public Form1()
         {
             InitializeComponent();
-            //comboBox1.Text = "Terra";
-            //numericG.Value = gravidades["Terra"];
         }
 
-        public string ascendenteDescendente(double v0Y, double g, double tempo)
-        {
-            double valor = v0Y - g * tempo;
 
-            if (valor > 0)
-                return "ascendente";
 
-            return "descendente";
-        }
 
         public void calcular()
         {
@@ -75,15 +56,14 @@ namespace Lançamento_Obliquo_Gráfico
                 double tempoDeVoo = formulas.tempoDeSubida(v0Y, g) * 2;
                 double alturaMaxima = formulas.hMax(v0Y, g);
 
-                labelAtingido.Text = ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
+                labelAtingido.Text = formulas.ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
                 labelDistanciaVoo.Text = distancia.ToString("F2") + " m";
                 labelTempoVoo.Text = tempoDeVoo.ToString("F2") + " s";
                 labelAlturaMaxima.Text = alturaMaxima.ToString("F2") + " m";
-                intervalo = 1;
 
 
 
-                if (numericV0.Value > 0 && numericG.Value > 0 && numericV0.Value > 0)
+                if (numericV0.Value > 0)
                 {
                     coordenadasx.Clear();
                     coordenadasy.Clear();
@@ -93,8 +73,8 @@ namespace Lançamento_Obliquo_Gráfico
                     do
                     {
                         double altura = formulas.trajetoria(metroPercorrido, g, angulo, v0);
-                        coordenadasy.Add(Math.Round(altura,2));
-                        coordenadasx.Add(Math.Round(metroPercorrido,2));
+                        coordenadasy.Add(Math.Round(altura, 2));
+                        coordenadasx.Add(Math.Round(metroPercorrido, 2));
                         metroPercorrido += incremento;
                     } while (metroPercorrido < distancia);
                     gerarGrafico(coordenadasx, coordenadasy, distancia);
@@ -166,11 +146,10 @@ namespace Lançamento_Obliquo_Gráfico
             numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoH.Value, (double)numericAlvoD.Value);
             calcular();
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string planeta = comboBox1.Text;
-
-            //numericG.Value = gravidades[planeta];
+            Alunos alunos = new Alunos();
+            alunos.ShowDialog();
         }
     }
 }
