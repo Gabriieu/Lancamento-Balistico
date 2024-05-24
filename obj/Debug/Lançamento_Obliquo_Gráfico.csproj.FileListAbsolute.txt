@@ -147,3 +147,7 @@ C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\bin\Deb
 C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\bin\Debug\Lançamento_Obliquo_Gráfico.application
 C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\obj\Debug\Lançamento_Obliquo_Gráfico.exe.manifest
 C:\Users\eliel\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\obj\Debug\Lançamento_Obliquo_Gráfico.application
+C:\Users\082230001\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\bin\Debug\Lançamento_Obliquo_Gráfico.exe.manifest
+C:\Users\082230001\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\bin\Debug\Lançamento_Obliquo_Gráfico.application
+C:\Users\082230001\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\obj\Debug\Lançamento_Obliquo_Gráfico.exe.manifest
+C:\Users\082230001\OneDrive - Fundação Salvador Arena\Lancamento-Balistico\obj\Debug\Lançamento_Obliquo_Gráfico.application

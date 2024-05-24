@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Lançamento_Obliquo_Gráfico.exe.manifest" size="5621">
+    <dependentAssembly dependencyType="install" codebase="Lançamento_Obliquo_Gráfico.exe.manifest" size="5648">
       <assemblyIdentity name="Lançamento_Obliquo_Gráfico.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>r+ndhgWrKaXUj4CIjmi0KwW7j4trRFtSr5Wlx8oygkY=</dsig:DigestValue>
+        <dsig:DigestValue>7uPlYIYZQQ2ERtzBIrn8+PTNb8goO7NXymm5BRk1/IA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

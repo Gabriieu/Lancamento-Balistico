@@ -79,7 +79,7 @@ namespace Lançamento_Obliquo_Gráfico
         {
             if (y > 0)
             {
-                return Math.Atan(y / x) * (180 / Math.PI) + 0.01;
+                return Math.Atan(y / x) * (180 / Math.PI);
             }
 
             return 0;
@@ -108,6 +108,16 @@ namespace Lançamento_Obliquo_Gráfico
                 return "ascendente";
 
             return "descendente";
+        }
+
+        public double velocidadeTorricelli(double g, double alvoY)
+        {
+            return Math.Sqrt(2 * g * alvoY);
+        }
+
+        public double tempoDeVooReto(double g, double alvoY)
+        {
+            return Math.Sqrt(alvoY / (g / 2)) * 2;
         }
     }
 }

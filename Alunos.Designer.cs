@@ -91,7 +91,7 @@
             this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(459, 117);
+            this.label5.Location = new System.Drawing.Point(459, 150);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(199, 27);
             this.label5.TabIndex = 6;
@@ -103,7 +103,7 @@
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(12, 117);
+            this.label6.Location = new System.Drawing.Point(12, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(441, 27);
             this.label6.TabIndex = 5;
@@ -114,11 +114,11 @@
             this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(459, 153);
+            this.label7.Location = new System.Drawing.Point(459, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(199, 27);
             this.label7.TabIndex = 10;
-            this.label7.Text = "082230001";
+            this.label7.Text = "082230037";
             // 
             // label8
             // 
@@ -126,18 +126,18 @@
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(12, 153);
+            this.label8.Location = new System.Drawing.Point(12, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(441, 27);
             this.label8.TabIndex = 9;
-            this.label8.Text = "LUCAS MACEDO";
+            this.label8.Text = "LUCAS DA SILVA MACEDO";
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(459, 81);
+            this.label9.Location = new System.Drawing.Point(459, 117);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(199, 27);
             this.label9.TabIndex = 8;
@@ -149,7 +149,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label10.Location = new System.Drawing.Point(12, 81);
+            this.label10.Location = new System.Drawing.Point(12, 117);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(441, 27);
             this.label10.TabIndex = 7;
@@ -160,11 +160,11 @@
             this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(459, 191);
+            this.label11.Location = new System.Drawing.Point(459, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(199, 27);
             this.label11.TabIndex = 12;
-            this.label11.Text = "082230001";
+            this.label11.Text = "082230014";
             // 
             // label12
             // 
@@ -172,11 +172,11 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(12, 191);
+            this.label12.Location = new System.Drawing.Point(12, 81);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(441, 27);
             this.label12.TabIndex = 11;
-            this.label12.Text = "PEDRO";
+            this.label12.Text = "PEDRO HENRIQUE DE SOUZA PERMAGNANI";
             // 
             // Alunos
             // 

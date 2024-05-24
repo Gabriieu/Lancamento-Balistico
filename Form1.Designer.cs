@@ -40,10 +40,10 @@
             this.numericTeta = new System.Windows.Forms.NumericUpDown();
             this.numericG = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericAlvoH = new System.Windows.Forms.NumericUpDown();
+            this.numericAlvoY = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericAlvoD = new System.Windows.Forms.NumericUpDown();
+            this.numericAlvoX = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.labelAtingido = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,11 +56,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericV0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTeta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoX)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDistanciaVoo
@@ -83,7 +85,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label3.Location = new System.Drawing.Point(244, 222);
+            this.label3.Location = new System.Drawing.Point(266, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 30);
             this.label3.TabIndex = 12;
@@ -95,7 +97,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label2.Location = new System.Drawing.Point(244, 192);
+            this.label2.Location = new System.Drawing.Point(266, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 27);
             this.label2.TabIndex = 11;
@@ -107,7 +109,7 @@
             this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbl1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.lbl1.Location = new System.Drawing.Point(244, 157);
+            this.lbl1.Location = new System.Drawing.Point(266, 157);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(31, 19);
             this.lbl1.TabIndex = 9;
@@ -145,6 +147,7 @@
             // 
             this.cartesianChart2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cartesianChart2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cartesianChart2.Location = new System.Drawing.Point(520, 18);
             this.cartesianChart2.Name = "cartesianChart2";
             this.cartesianChart2.Size = new System.Drawing.Size(822, 469);
@@ -154,13 +157,13 @@
             // numericV0
             // 
             this.numericV0.DecimalPlaces = 2;
-            this.numericV0.Enabled = false;
+            this.numericV0.ForeColor = System.Drawing.Color.Black;
             this.numericV0.Increment = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.numericV0.Location = new System.Drawing.Point(281, 156);
+            this.numericV0.Location = new System.Drawing.Point(303, 156);
             this.numericV0.Maximum = new decimal(new int[] {
             -1744830464,
             1364693707,
@@ -172,6 +175,7 @@
             -12368715,
             -2147483648});
             this.numericV0.Name = "numericV0";
+            this.numericV0.ReadOnly = true;
             this.numericV0.Size = new System.Drawing.Size(120, 20);
             this.numericV0.TabIndex = 35;
             this.numericV0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -184,7 +188,7 @@
             0,
             0,
             131072});
-            this.numericTeta.Location = new System.Drawing.Point(281, 192);
+            this.numericTeta.Location = new System.Drawing.Point(303, 192);
             this.numericTeta.Maximum = new decimal(new int[] {
             90,
             0,
@@ -204,7 +208,7 @@
             0,
             0,
             131072});
-            this.numericG.Location = new System.Drawing.Point(281, 225);
+            this.numericG.Location = new System.Drawing.Point(303, 225);
             this.numericG.Maximum = new decimal(new int[] {
             -1744830464,
             1364693707,
@@ -239,25 +243,35 @@
             this.label1.Text = "POSIÇÃO DO ALVO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericAlvoH
+            // numericAlvoY
             // 
-            this.numericAlvoH.DecimalPlaces = 2;
-            this.numericAlvoH.Increment = new decimal(new int[] {
+            this.numericAlvoY.DecimalPlaces = 2;
+            this.numericAlvoY.Increment = new decimal(new int[] {
             5,
             0,
             0,
             65536});
-            this.numericAlvoH.Location = new System.Drawing.Point(126, 157);
-            this.numericAlvoH.Maximum = new decimal(new int[] {
+            this.numericAlvoY.Location = new System.Drawing.Point(126, 157);
+            this.numericAlvoY.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
-            this.numericAlvoH.Name = "numericAlvoH";
-            this.numericAlvoH.Size = new System.Drawing.Size(85, 20);
-            this.numericAlvoH.TabIndex = 0;
-            this.numericAlvoH.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericAlvoH.ValueChanged += new System.EventHandler(this.numericAlvoH_ValueChanged);
+            this.numericAlvoY.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericAlvoY.Name = "numericAlvoY";
+            this.numericAlvoY.Size = new System.Drawing.Size(85, 20);
+            this.numericAlvoY.TabIndex = 0;
+            this.numericAlvoY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericAlvoY.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericAlvoY.ValueChanged += new System.EventHandler(this.numericAlvoH_ValueChanged);
             // 
             // label7
             // 
@@ -283,25 +297,25 @@
             this.label8.TabIndex = 43;
             this.label8.Text = "Distância:";
             // 
-            // numericAlvoD
+            // numericAlvoX
             // 
-            this.numericAlvoD.DecimalPlaces = 2;
-            this.numericAlvoD.Increment = new decimal(new int[] {
+            this.numericAlvoX.DecimalPlaces = 2;
+            this.numericAlvoX.Increment = new decimal(new int[] {
             5,
             0,
             0,
             65536});
-            this.numericAlvoD.Location = new System.Drawing.Point(126, 193);
-            this.numericAlvoD.Maximum = new decimal(new int[] {
+            this.numericAlvoX.Location = new System.Drawing.Point(126, 193);
+            this.numericAlvoX.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
-            this.numericAlvoD.Name = "numericAlvoD";
-            this.numericAlvoD.Size = new System.Drawing.Size(85, 20);
-            this.numericAlvoD.TabIndex = 1;
-            this.numericAlvoD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericAlvoD.ValueChanged += new System.EventHandler(this.numericAlvoD_ValueChanged);
+            this.numericAlvoX.Name = "numericAlvoX";
+            this.numericAlvoX.Size = new System.Drawing.Size(85, 20);
+            this.numericAlvoX.TabIndex = 1;
+            this.numericAlvoX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericAlvoX.ValueChanged += new System.EventHandler(this.numericAlvoD_ValueChanged);
             // 
             // label9
             // 
@@ -309,7 +323,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label9.Location = new System.Drawing.Point(277, 125);
+            this.label9.Location = new System.Drawing.Point(299, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 19);
             this.label9.TabIndex = 44;
@@ -422,7 +436,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label13.Location = new System.Drawing.Point(407, 156);
+            this.label13.Location = new System.Drawing.Point(429, 156);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(43, 19);
             this.label13.TabIndex = 58;
@@ -434,7 +448,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label14.Location = new System.Drawing.Point(407, 193);
+            this.label14.Location = new System.Drawing.Point(429, 193);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 19);
             this.label14.TabIndex = 59;
@@ -446,7 +460,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label15.Location = new System.Drawing.Point(407, 226);
+            this.label15.Location = new System.Drawing.Point(429, 226);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(43, 19);
             this.label15.TabIndex = 60;
@@ -463,10 +477,36 @@
             this.linkLabel1.Text = "@alunos";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label16.Location = new System.Drawing.Point(217, 158);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(21, 19);
+            this.label16.TabIndex = 62;
+            this.label16.Text = "m";
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label17.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label17.Location = new System.Drawing.Point(217, 194);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(21, 19);
+            this.label17.TabIndex = 63;
+            this.label17.Text = "m";
+            // 
             // Form1
             // 
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1354, 506);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -480,9 +520,9 @@
             this.Controls.Add(this.labelAtingido);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericAlvoD);
+            this.Controls.Add(this.numericAlvoX);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericAlvoH);
+            this.Controls.Add(this.numericAlvoY);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericG);
             this.Controls.Add(this.numericTeta);
@@ -504,8 +544,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericV0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTeta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAlvoX)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,10 +563,10 @@
         private System.Windows.Forms.NumericUpDown numericTeta;
         private System.Windows.Forms.NumericUpDown numericG;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericAlvoH;
+        private System.Windows.Forms.NumericUpDown numericAlvoY;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericAlvoD;
+        private System.Windows.Forms.NumericUpDown numericAlvoX;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelAtingido;
         private System.Windows.Forms.Label label4;
@@ -539,6 +579,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }
 

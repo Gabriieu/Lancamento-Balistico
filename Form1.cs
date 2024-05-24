@@ -14,6 +14,7 @@ using System.Windows.Diagnostics;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using Brushes = System.Windows.Media.Brushes;
 
 
 namespace Lançamento_Obliquo_Gráfico
@@ -26,7 +27,6 @@ namespace Lançamento_Obliquo_Gráfico
         List<double> coordenadasy = new List<double>();
         double v0, v0Y, v0X, angulo, g, alvoY, alvoX;
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -37,9 +37,6 @@ namespace Lançamento_Obliquo_Gráfico
             InitializeComponent();
         }
 
-
-
-
         public void calcular()
         {
             try
@@ -49,24 +46,41 @@ namespace Lançamento_Obliquo_Gráfico
                 v0Y = formulas.v0Y((double)numericV0.Value, angulo);
                 v0X = formulas.v0X((double)numericV0.Value, angulo);
                 g = (double)numericG.Value;
-                alvoX = (double)numericAlvoD.Value;
-                alvoY = (double)numericAlvoH.Value;
+                alvoX = (double)numericAlvoX.Value;
+                alvoY = (double)numericAlvoY.Value;
+
                 double tempoAtingirAlvo = formulas.tempoTotal(alvoX, v0X);
                 double distancia = formulas.alcanceHorizontal((double)numericV0.Value, (double)numericG.Value, (double)numericTeta.Value);
                 double tempoDeVoo = formulas.tempoDeSubida(v0Y, g) * 2;
                 double alturaMaxima = formulas.hMax(v0Y, g);
 
-                labelAtingido.Text = formulas.ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
-                labelDistanciaVoo.Text = distancia.ToString("F2") + " m";
-                labelTempoVoo.Text = tempoDeVoo.ToString("F2") + " s";
-                labelAlturaMaxima.Text = alturaMaxima.ToString("F2") + " m";
+                coordenadasx.Clear();
+                coordenadasy.Clear();
 
-
-
-                if (numericV0.Value > 0)
+                if (numericAlvoX.Value == 0)
                 {
-                    coordenadasx.Clear();
-                    coordenadasy.Clear();
+                    angulo = 90;
+                    v0 = formulas.velocidadeTorricelli(g, alvoY);
+                    numericTeta.Value = (decimal)angulo;
+                    numericV0.Value = (decimal)v0;
+                    alturaMaxima = alvoY;
+                    tempoDeVoo = formulas.tempoDeVooReto(g, alvoY);
+
+                    double incremento = alvoY * 0.1;
+                    double alturaPercorrida = 0;
+
+                    do
+                    {
+                        coordenadasy.Add(Math.Round(alturaPercorrida, 2));
+                        coordenadasx.Add(0);
+                        alturaPercorrida += incremento;
+                    } while (alturaPercorrida < alvoY);
+                    gerarGrafico(coordenadasx, coordenadasy, 0);
+                    labelAtingido.Text = "-";
+                }
+                else
+                {
+                    
                     double incremento = distancia * 0.1;
                     double metroPercorrido = 0;
 
@@ -79,18 +93,24 @@ namespace Lançamento_Obliquo_Gráfico
                     } while (metroPercorrido < distancia);
                     gerarGrafico(coordenadasx, coordenadasy, distancia);
                 }
+
+                labelAtingido.Text = formulas.ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
+                labelDistanciaVoo.Text = distancia.ToString("F3") + " m";
+                labelTempoVoo.Text = tempoDeVoo.ToString("F2") + " s";
+                labelAlturaMaxima.Text = alturaMaxima.ToString("F3") + " m";
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
 
         public void gerarGrafico(List<double> eixoX, List<double> eixoY, double distanciaMax)
         {
-            cartesianChart2.Series = new SeriesCollection
+            if(alvoX != 0)
+            {
+                cartesianChart2.Series = new SeriesCollection
                     {
                         new LineSeries
                         {
@@ -111,6 +131,7 @@ namespace Lançamento_Obliquo_Gráfico
                             StrokeThickness = 1,
                             LineSmoothness = 1,
                             DataLabels = true,
+                            Stroke=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,0,0)),
                         },
                         new LineSeries
                         {
@@ -123,28 +144,90 @@ namespace Lançamento_Obliquo_Gráfico
                             Title = "ALVO",
                         }
                     };
+            }
+            else
+            {
+                cartesianChart2.Series = new SeriesCollection
+                    {
+                        new LineSeries
+                        {
+                        Values = new ChartValues<ObservablePoint>
+                            {
+                                new ObservablePoint(0, eixoY[0]),
+                                new ObservablePoint(0, eixoY[1]),
+                                new ObservablePoint(0, eixoY[2]),
+                                new ObservablePoint(0, eixoY[3]),
+                                new ObservablePoint(0, eixoY[4]),
+                                new ObservablePoint(0, eixoY[5]),
+                                new ObservablePoint(0, eixoY[6]),
+                                new ObservablePoint(0, eixoY[7]),
+                                new ObservablePoint(0, eixoY[8]),
+                                new ObservablePoint(0, eixoY[9]),
+                                new ObservablePoint(0, alvoY)
+                            },
+                            StrokeThickness = 1,
+                            LineSmoothness = 1,
+                            DataLabels = true,
+                            Stroke=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,0,0)),
+                        },
+                        new LineSeries
+                        {
+                            Values = new ChartValues<ObservablePoint>
+                            {
+                                new ObservablePoint(alvoX, alvoY)
+                            },
+                            StrokeThickness = 5,
+                            LineSmoothness= 5,
+                            Title = "ALVO",
+                        }
+                    };
+            }
         }
         private void numericAlvoH_ValueChanged(object sender, EventArgs e)
         {
-            numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            calcular();
+            try
+            {
+                numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                calcular();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void numericAlvoD_ValueChanged(object sender, EventArgs e)
         {
-            numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            calcular();
+            try
+            {
+                numericTeta.Minimum = (decimal)formulas.anguloMinimo((double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                numericTeta.Value = (decimal)formulas.anguloMinimo((double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                calcular();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void numericTeta_ValueChanged(object sender, EventArgs e)
         {
-            numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            calcular();
+            try
+            {
+                numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                calcular();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void numericG_ValueChanged(object sender, EventArgs e)
         {
-            numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoH.Value, (double)numericAlvoD.Value);
-            calcular();
+            try
+            {
+                numericV0.Value = (decimal)formulas.v0((double)numericG.Value, (double)numericTeta.Value, (double)numericAlvoY.Value, (double)numericAlvoX.Value);
+                calcular();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lançamento_Obliquo_Gráfico.exe" size="298464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Lançamento_Obliquo_Gráfico.exe" size="300512">
       <assemblyIdentity name="Lançamento_Obliquo_Gráfico" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iQzEGm8fZ2f8ixW5k85Qpcn4XoxacV467w+1D8ZVREk=</dsig:DigestValue>
+        <dsig:DigestValue>EkH1h4xJPzWa4wncp5NtG2Qf+127lYBqX4cM0C8oqzo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
