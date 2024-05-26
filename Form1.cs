@@ -128,7 +128,7 @@ namespace Lançamento_Obliquo_Gráfico
                                 new ObservablePoint(eixoX[9], eixoY[9]),
                                 new ObservablePoint(distanciaMax, 0),
                             },
-                            StrokeThickness = 1,
+                            StrokeThickness = 2,
                             LineSmoothness = 1,
                             DataLabels = true,
                             Stroke=new SolidColorBrush(System.Windows.Media.Color.FromRgb(0,0,0)),
@@ -142,6 +142,7 @@ namespace Lançamento_Obliquo_Gráfico
                             StrokeThickness = 5,
                             LineSmoothness= 5,
                             Title = "ALVO",
+                            PointGeometrySize = 12,
                         }
                     };
             }
@@ -179,6 +180,7 @@ namespace Lançamento_Obliquo_Gráfico
                             StrokeThickness = 5,
                             LineSmoothness= 5,
                             Title = "ALVO",
+                            PointGeometrySize = 12,
                         }
                     };
             }

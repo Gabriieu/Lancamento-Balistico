@@ -88,7 +88,7 @@ namespace Lançamento_Obliquo_Gráfico
         public double v0(double g, double angulo, double y, double x)
         {
 
-            double tan = Math.Tan(angulo * Math.PI / 180);
+            double tan = Math.Round(Math.Tan(angulo * Math.PI / 180), 5);
 
             double dividendo = g * Math.Pow(x, 2) * (1 + Math.Pow(tan, 2));
 
@@ -97,17 +97,24 @@ namespace Lançamento_Obliquo_Gráfico
             if (divisor < 0)
                 divisor *= -1;
 
-            double resultado = (dividendo / divisor);
+            if(divisor == 0)
+                return Math.Sqrt(dividendo);
+
+            double resultado = dividendo / divisor;
+
             return Math.Sqrt(resultado);
         }
+
         public string ascendenteDescendente(double v0Y, double g, double tempo)
         {
             double valor = v0Y - g * tempo;
 
             if (valor > 0)
                 return "ascendente";
+            else if (valor < 0)
+                return "descendente";
 
-            return "descendente";
+            return "-";
         }
 
         public double velocidadeTorricelli(double g, double alvoY)

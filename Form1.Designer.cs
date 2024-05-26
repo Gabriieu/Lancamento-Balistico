@@ -182,12 +182,12 @@
             // 
             // numericTeta
             // 
-            this.numericTeta.DecimalPlaces = 2;
+            this.numericTeta.DecimalPlaces = 1;
             this.numericTeta.Increment = new decimal(new int[] {
             1,
             0,
             0,
-            131072});
+            65536});
             this.numericTeta.Location = new System.Drawing.Point(303, 192);
             this.numericTeta.Maximum = new decimal(new int[] {
             90,
@@ -247,7 +247,7 @@
             // 
             this.numericAlvoY.DecimalPlaces = 2;
             this.numericAlvoY.Increment = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             65536});
@@ -301,7 +301,7 @@
             // 
             this.numericAlvoX.DecimalPlaces = 2;
             this.numericAlvoX.Increment = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             65536});
