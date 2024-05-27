@@ -55,6 +55,11 @@ namespace Lançamento_Obliquo_Gráfico
             return x / v0X;
         }
 
+        public double tempoAtingirAlvo(double alvoX, double v0X)
+        {
+            return alvoX / v0X;
+        }
+
         public double hMax(double v0Y, double gravidade)
         {
             return Math.Pow(v0Y, 2) / (2 * gravidade);

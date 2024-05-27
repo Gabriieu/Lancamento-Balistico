@@ -49,7 +49,8 @@ namespace Lançamento_Obliquo_Gráfico
                 alvoX = (double)numericAlvoX.Value;
                 alvoY = (double)numericAlvoY.Value;
 
-                double tempoAtingirAlvo = formulas.tempoTotal(alvoX, v0X);
+                double tempoTotalVoo = formulas.tempoTotal(alvoX, v0X);
+                double tempoAtingirAlvo = formulas.tempoAtingirAlvo(alvoX, v0X);
                 double distancia = formulas.alcanceHorizontal((double)numericV0.Value, (double)numericG.Value, (double)numericTeta.Value);
                 double tempoDeVoo = formulas.tempoDeSubida(v0Y, g) * 2;
                 double alturaMaxima = formulas.hMax(v0Y, g);
@@ -59,12 +60,14 @@ namespace Lançamento_Obliquo_Gráfico
 
                 if (numericAlvoX.Value == 0)
                 {
+                    labelAtingido.Text = "-";
                     angulo = 90;
                     v0 = formulas.velocidadeTorricelli(g, alvoY);
                     numericTeta.Value = (decimal)angulo;
                     numericV0.Value = (decimal)v0;
                     alturaMaxima = alvoY;
                     tempoDeVoo = formulas.tempoDeVooReto(g, alvoY);
+                    tempoAtingirAlvo = tempoDeVoo / 2;
 
                     double incremento = alvoY * 0.1;
                     double alturaPercorrida = 0;
@@ -76,11 +79,10 @@ namespace Lançamento_Obliquo_Gráfico
                         alturaPercorrida += incremento;
                     } while (alturaPercorrida < alvoY);
                     gerarGrafico(coordenadasx, coordenadasy, 0);
-                    labelAtingido.Text = "-";
                 }
                 else
                 {
-                    
+                    numericTeta.Maximum = 89.9m;
                     double incremento = distancia * 0.1;
                     double metroPercorrido = 0;
 
@@ -94,9 +96,10 @@ namespace Lançamento_Obliquo_Gráfico
                     gerarGrafico(coordenadasx, coordenadasy, distancia);
                 }
 
-                labelAtingido.Text = formulas.ascendenteDescendente(v0Y, g, tempoAtingirAlvo).ToUpper();
+                labelAtingido.Text = formulas.ascendenteDescendente(v0Y, g, tempoTotalVoo).ToUpper();
                 labelDistanciaVoo.Text = distancia.ToString("F3") + " m";
                 labelTempoVoo.Text = tempoDeVoo.ToString("F2") + " s";
+                labelTempoAtingir.Text = tempoAtingirAlvo.ToString("F2") + " s";
                 labelAlturaMaxima.Text = alturaMaxima.ToString("F3") + " m";
 
             }

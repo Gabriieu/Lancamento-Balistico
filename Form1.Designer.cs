@@ -50,7 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -58,6 +57,9 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.labelTempoAtingir = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericV0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericTeta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericG)).BeginInit();
@@ -71,7 +73,7 @@
             this.labelDistanciaVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDistanciaVoo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelDistanciaVoo.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelDistanciaVoo.Location = new System.Drawing.Point(334, 374);
+            this.labelDistanciaVoo.Location = new System.Drawing.Point(334, 375);
             this.labelDistanciaVoo.Name = "labelDistanciaVoo";
             this.labelDistanciaVoo.Padding = new System.Windows.Forms.Padding(3);
             this.labelDistanciaVoo.Size = new System.Drawing.Size(155, 25);
@@ -121,7 +123,7 @@
             this.labelTempoVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTempoVoo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelTempoVoo.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelTempoVoo.Location = new System.Drawing.Point(334, 400);
+            this.labelTempoVoo.Location = new System.Drawing.Point(334, 457);
             this.labelTempoVoo.Name = "labelTempoVoo";
             this.labelTempoVoo.Padding = new System.Windows.Forms.Padding(3);
             this.labelTempoVoo.Size = new System.Drawing.Size(155, 25);
@@ -135,7 +137,7 @@
             this.labelAlturaMaxima.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAlturaMaxima.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelAlturaMaxima.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelAlturaMaxima.Location = new System.Drawing.Point(334, 426);
+            this.labelAlturaMaxima.Location = new System.Drawing.Point(334, 402);
             this.labelAlturaMaxima.Name = "labelAlturaMaxima";
             this.labelAlturaMaxima.Padding = new System.Windows.Forms.Padding(3);
             this.labelAlturaMaxima.Size = new System.Drawing.Size(155, 25);
@@ -202,12 +204,12 @@
             // 
             // numericG
             // 
-            this.numericG.DecimalPlaces = 3;
+            this.numericG.DecimalPlaces = 2;
             this.numericG.Increment = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
-            131072});
+            65536});
             this.numericG.Location = new System.Drawing.Point(303, 225);
             this.numericG.Maximum = new decimal(new int[] {
             -1744830464,
@@ -218,16 +220,16 @@
             1,
             0,
             0,
-            196608});
+            131072});
             this.numericG.Name = "numericG";
             this.numericG.Size = new System.Drawing.Size(120, 20);
             this.numericG.TabIndex = 3;
             this.numericG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericG.Value = new decimal(new int[] {
-            980665,
+            981,
             0,
             0,
-            327680});
+            131072});
             this.numericG.ValueChanged += new System.EventHandler(this.numericG_ValueChanged);
             // 
             // label1
@@ -366,7 +368,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label5.Location = new System.Drawing.Point(20, 374);
+            this.label5.Location = new System.Drawing.Point(20, 375);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(3);
             this.label5.Size = new System.Drawing.Size(308, 25);
@@ -381,7 +383,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label6.Location = new System.Drawing.Point(20, 400);
+            this.label6.Location = new System.Drawing.Point(20, 457);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(3);
             this.label6.Size = new System.Drawing.Size(308, 25);
@@ -396,26 +398,13 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label11.Location = new System.Drawing.Point(20, 426);
+            this.label11.Location = new System.Drawing.Point(20, 402);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(3);
             this.label11.Size = new System.Drawing.Size(308, 25);
             this.label11.TabIndex = 54;
             this.label11.Text = "ALTURA MÁXIMA ATINGIDA: ";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label10.Location = new System.Drawing.Point(118, 312);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(255, 19);
-            this.label10.TabIndex = 55;
-            this.label10.Text = "INFORMAÇÕES";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
             // 
@@ -469,7 +458,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(17, 482);
+            this.linkLabel1.Location = new System.Drawing.Point(1, 489);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(49, 13);
             this.linkLabel1.TabIndex = 61;
@@ -501,10 +490,55 @@
             this.label17.TabIndex = 63;
             this.label17.Text = "m";
             // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label18.Location = new System.Drawing.Point(20, 429);
+            this.label18.Name = "label18";
+            this.label18.Padding = new System.Windows.Forms.Padding(3);
+            this.label18.Size = new System.Drawing.Size(308, 25);
+            this.label18.TabIndex = 65;
+            this.label18.Text = "TEMPO ATÉ ATINGIR O ALVO:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // labelTempoAtingir
+            // 
+            this.labelTempoAtingir.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelTempoAtingir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTempoAtingir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelTempoAtingir.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.labelTempoAtingir.Location = new System.Drawing.Point(334, 429);
+            this.labelTempoAtingir.Name = "labelTempoAtingir";
+            this.labelTempoAtingir.Padding = new System.Windows.Forms.Padding(3);
+            this.labelTempoAtingir.Size = new System.Drawing.Size(155, 25);
+            this.labelTempoAtingir.TabIndex = 64;
+            this.labelTempoAtingir.Text = "0,00 s";
+            this.labelTempoAtingir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label19.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label19.Location = new System.Drawing.Point(85, 291);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(328, 44);
+            this.label19.TabIndex = 66;
+            this.label19.Text = "INFORMAÇÕES";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1354, 506);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.labelTempoAtingir);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.linkLabel1);
@@ -512,7 +546,6 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -573,7 +606,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -581,6 +613,9 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label labelTempoAtingir;
+        private System.Windows.Forms.Label label19;
     }
 }
 
